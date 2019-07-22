@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{8B3532AA-B45B-401A-BDE8-3B22BF428BEC}|Default">
+  <MonoDevelop.Ide.ItemProperties.TimeTableManager PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TimeTableManager/MailService/Mailer.cs">
+    <Files>
+      <File FileName="TimeTableManager/Program.cs" Line="41" Column="30" />
+      <File FileName="TimeTableManager/MailService/Config.cs" />
+      <File FileName="TimeTableManager/MailService/Mailer.cs" Line="127" Column="10" />
+      <File FileName="TimeTableManager/MailService/StorageManager.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TimeTableManager" expanded="True">
+            <Node name="TimeTableManager" expanded="True">
+              <Node name="MailService" expanded="True">
+                <Node name="Mailer.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

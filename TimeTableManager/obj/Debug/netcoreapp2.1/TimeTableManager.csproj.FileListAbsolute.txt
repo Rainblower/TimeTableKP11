@@ -1,0 +1,11 @@
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/bin/Debug/netcoreapp2.1/TimeTableManager.deps.json
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/bin/Debug/netcoreapp2.1/TimeTableManager.runtimeconfig.json
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/bin/Debug/netcoreapp2.1/TimeTableManager.runtimeconfig.dev.json
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/bin/Debug/netcoreapp2.1/TimeTableManager.dll
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/bin/Debug/netcoreapp2.1/TimeTableManager.pdb
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.csprojAssemblyReference.cache
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.csproj.CoreCompileInputs.cache
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.AssemblyInfoInputs.cache
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.AssemblyInfo.cs
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.dll
+/Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.pdb

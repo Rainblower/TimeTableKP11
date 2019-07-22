@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/WSR/Projects/TimeTableManager/TimeTableManager/TimeTableManager.csproj": {}
+  },
+  "projects": {
+    "/Users/WSR/Projects/TimeTableManager/TimeTableManager/TimeTableManager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/WSR/Projects/TimeTableManager/TimeTableManager/TimeTableManager.csproj",
+        "projectName": "TimeTableManager",
+        "projectPath": "/Users/WSR/Projects/TimeTableManager/TimeTableManager/TimeTableManager.csproj",
+        "packagesPath": "/Users/WSR/.nuget/packages/",
+        "outputPath": "/Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/WSR/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "OpenPop.NET": {
+              "target": "Package",
+              "version": "[2.0.6.1120, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

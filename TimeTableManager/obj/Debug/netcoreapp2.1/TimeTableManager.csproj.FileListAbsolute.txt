@@ -9,3 +9,13 @@
 /Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.AssemblyInfo.cs
 /Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.dll
 /Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/Debug/netcoreapp2.1/TimeTableManager.pdb
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\bin\Debug\netcoreapp2.1\TimeTableManager.deps.json
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\bin\Debug\netcoreapp2.1\TimeTableManager.runtimeconfig.json
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\bin\Debug\netcoreapp2.1\TimeTableManager.runtimeconfig.dev.json
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\bin\Debug\netcoreapp2.1\TimeTableManager.dll
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\bin\Debug\netcoreapp2.1\TimeTableManager.pdb
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\obj\Debug\netcoreapp2.1\TimeTableManager.csproj.CoreCompileInputs.cache
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\obj\Debug\netcoreapp2.1\TimeTableManager.AssemblyInfoInputs.cache
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\obj\Debug\netcoreapp2.1\TimeTableManager.AssemblyInfo.cs
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\obj\Debug\netcoreapp2.1\TimeTableManager.dll
+C:\Users\red57\source\repos\TimeTableKP11\TimeTableManager\obj\Debug\netcoreapp2.1\TimeTableManager.pdb

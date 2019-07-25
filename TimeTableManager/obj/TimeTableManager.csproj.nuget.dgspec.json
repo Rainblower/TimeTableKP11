@@ -1,32 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/Users/WSR/Projects/TimeTableManager/TimeTableManager/TimeTableManager.csproj": {}
+    "C:\\Users\\red57\\source\\repos\\TimeTableKP11\\TimeTableManager\\TimeTableManager.csproj": {}
   },
   "projects": {
-    "/Users/WSR/Projects/TimeTableManager/TimeTableManager/TimeTableManager.csproj": {
+    "C:\\Users\\red57\\source\\repos\\TimeTableKP11\\TimeTableManager\\TimeTableManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/WSR/Projects/TimeTableManager/TimeTableManager/TimeTableManager.csproj",
+        "projectUniqueName": "C:\\Users\\red57\\source\\repos\\TimeTableKP11\\TimeTableManager\\TimeTableManager.csproj",
         "projectName": "TimeTableManager",
-        "projectPath": "/Users/WSR/Projects/TimeTableManager/TimeTableManager/TimeTableManager.csproj",
-        "packagesPath": "/Users/WSR/.nuget/packages/",
-        "outputPath": "/Users/WSR/Projects/TimeTableManager/TimeTableManager/obj/",
+        "projectPath": "C:\\Users\\red57\\source\\repos\\TimeTableKP11\\TimeTableManager\\TimeTableManager.csproj",
+        "packagesPath": "C:\\Users\\red57\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\red57\\source\\repos\\TimeTableKP11\\TimeTableManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/WSR/.config/NuGet/NuGet.Config"
+          "C:\\Users\\red57\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "netcoreapp2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
+          "netcoreapp2.0": {
             "projectReferences": {}
           }
         },
@@ -37,12 +41,17 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
+        "netcoreapp2.0": {
           "dependencies": {
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.0, )",
+              "version": "[2.0.0, )",
               "autoReferenced": true
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.4.1, )"
             },
             "OpenPop.NET": {
               "target": "Package",

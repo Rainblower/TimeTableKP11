@@ -12,7 +12,6 @@ namespace TimeTableManager.MailService
     {
         private const int LastMessageCount = 10;
         private readonly Pop3Client _client = new Pop3Client();
-        private string _subject = DateTime.Now.ToShortDateString();
 
         private List<Message> _messages;
 
@@ -53,21 +52,22 @@ namespace TimeTableManager.MailService
 
             if(messageCount != 0)
             {
-                for (var i = 0; i <= LastMessageCount; i++)
+                for (var i = messageCount; i > messageCount - LastMessageCount - 1; i--)
                 {
                     try
                     {
                         _messages.Add(_client.GetMessage(i));
 
                         if(messageCount >= 10)
-                            Console.WriteLine((i * 100 / LastMessageCount) + "%");
+                            Console.WriteLine(((i - messageCount)  * -100 / LastMessageCount) + "%");
                         else
-                            Console.WriteLine((i * 100 / messageCount) + "%");
+                            Console.WriteLine(((i - messageCount) * -100 / messageCount) + "%");
 
 
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex);
                     }
                 }
                 _client.Disconnect();
@@ -80,9 +80,9 @@ namespace TimeTableManager.MailService
 
         public string GetAttachment()
         {
-            _subject = "Расписание на " + DateTime.Now.ToShortDateString();
+            var subject = "Расписание на " + DateTime.Now.ToString("dd.MM.yyyy");
 
-            var filterMessages = FilterMessages();
+            var filterMessages = FilterMessages(subject);
 
             var path = "";
             if (filterMessages.Count > 0)
@@ -92,7 +92,7 @@ namespace TimeTableManager.MailService
                 foreach (var ado in att)
                 {
                     //сохраняем все найденные в письмах вложения
-                    path = StorageManager.CreateFilePath(ado.FileName);
+                    path = StorageManager.CreateFilePath(ado.FileName, "Attachments");
                     ado.Save(new System.IO.FileInfo(path));
                     Console.WriteLine("File created: " + ado.FileName + "\n");
                 }
@@ -101,7 +101,7 @@ namespace TimeTableManager.MailService
             return path;
         }
 
-        public List<Message> FilterMessages()
+        public List<Message> FilterMessages(string _subject)
         {
             var messages = GetMessages()
                 .Where(a => a.FindAllAttachments() != null)

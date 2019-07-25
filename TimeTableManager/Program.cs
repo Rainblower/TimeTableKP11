@@ -6,6 +6,7 @@ using System.Threading;
 using TimeTableManager.ExcelService;
 using TimeTableManager.HTMLService;
 using TimeTableManager.MailService;
+using TimeTableManager.NetworkService;
 
 namespace TimeTableManager
 {
@@ -40,7 +41,10 @@ namespace TimeTableManager
 
                 for (int i = 0; i < tables.Count; i++)
                 {
-                    StorageManager.CreateFile(groupsNameList[i],"Tables",tables[i],"html");
+                    var values = groupsNameList[i].Split("/");
+                    var fileName = values[values.Length-1];
+                    var filePath = StorageManager.CreateFile(fileName,"Tables",tables[i],"html");
+                    SftpManager.FileUploadSFTP(fileName + ".html", filePath);
                 }
             }
             else

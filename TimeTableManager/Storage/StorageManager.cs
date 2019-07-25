@@ -23,7 +23,7 @@ namespace TimeTableManager.MailService
             return filePath;
         }
 
-        public static void CreateFile(string filename, string folderName, string fileText, string expansion)
+        public static string CreateFile(string filename, string folderName, string fileText, string expansion)
         {
             var path = CreateFilePath(filename, folderName) + $".{expansion}";
 
@@ -34,6 +34,8 @@ namespace TimeTableManager.MailService
                 fs.Write(title, 0, title.Length);
                 Console.WriteLine("File created: " + filename + "\n");
             }
+
+            return path;
         }
 
         public static string ReadFilePath(string _path)

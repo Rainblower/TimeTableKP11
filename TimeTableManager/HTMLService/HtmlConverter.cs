@@ -40,6 +40,9 @@ namespace TimeTableManager.HTMLService
                         continue;
                     }
 
+                    if (group.Pars.Count % 2 != 0)
+                        group.Pars.Remove(group.Pars[group.Pars.Count - 1]);
+
                     if (group.Pars[i].ParName != group.Pars[i+1].ParName)
                     {
                         var cell = CreateDoubleCell(count, group.Pars[i].ParName, group.Pars[i].Cabin, group.Pars[i+1].ParName, group.Pars[i+1].Cabin);

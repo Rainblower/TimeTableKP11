@@ -74,8 +74,14 @@ namespace TimeTableManager.ExcelService
                             var count = 0;
                             _pars = new List<Par>();
                             _blankCount = 0;
+                            int _subRow = 7;
 
-                            for (int subRow = 7; subRow <= sheet.LastRowNum; subRow++)
+                            if (sheet.LastRowNum == 47)
+                                _subRow = 7;
+                            else
+                                _subRow = 15;
+
+                            for (int subRow = _subRow; subRow <= sheet.LastRowNum; subRow++)
                             {
                                 foreach (var colCell in sheet.GetRow(subRow).Cells)
                                 {

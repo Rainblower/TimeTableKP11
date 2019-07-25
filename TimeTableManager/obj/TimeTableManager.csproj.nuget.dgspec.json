@@ -14,7 +14,7 @@
         "outputPath": "C:\\Users\\red57\\source\\repos\\TimeTableKP11\\TimeTableManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -56,6 +56,10 @@
             "OpenPop.NET": {
               "target": "Package",
               "version": "[2.0.6.1120, )"
+            },
+            "SSH.NET": {
+              "target": "Package",
+              "version": "[2016.1.0, )"
             }
           },
           "imports": [

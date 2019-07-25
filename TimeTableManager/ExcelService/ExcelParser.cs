@@ -76,7 +76,7 @@ namespace TimeTableManager.ExcelService
                             _blankCount = 0;
                             int _subRow = 7;
 
-                            if (sheet.LastRowNum == 47)
+                            if (sheet.GetRow(7).Cells[0].StringCellValue != null)
                                 _subRow = 7;
                             else
                                 _subRow = 15;

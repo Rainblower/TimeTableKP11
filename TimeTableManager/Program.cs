@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using TimeTableManager.ExcelService;
 using TimeTableManager.HTMLService;
@@ -15,12 +16,9 @@ namespace TimeTableManager
         static MailService.Mailer mailer = new MailService.Mailer();
         private static Timer timer = new Timer(Callback, null, 0, 0);
         private static bool isStart = true;
-        private static int seconds = 180;
+        private static int seconds = 10;
 
-        private static List<string> groupsNameList = new List<string>()
-        {
-            "IB-21", "IB-22", "C-12", "C-21", "KC-21", "KC-32", "VKC-32","KCiK-11", "KCiK-22", "ISiP-12","ISiP-13","ISiP-21","PRV-33","PRV-42"
-        };
+        //private static List<string> messages;
 
         static void Main(string[] args)
         {
@@ -39,13 +37,27 @@ namespace TimeTableManager
                 var parser = new ExcelParser();
                 var tables = HtmlConverter.CreateTable(parser.Parse(attachmentPath));
 
+                //messages = new List<string>();
+
                 for (int i = 0; i < tables.Count; i++)
                 {
-                    var values = groupsNameList[i].Split("/");
-                    var fileName = values[values.Length-1];
+                    Regex regex = new Regex(@"<title>.*<\/title>");
+                    MatchCollection matches = regex.Matches(tables[i]);
+                    var fileName = ClearName(matches[0].Value);
                     var filePath = StorageManager.CreateFile(fileName,"Tables",tables[i],"html");
-                    SftpManager.FileUploadSFTP(fileName + ".html", filePath);
+                    var savePath = SftpManager.FileUploadSFTP(fileName + ".html", filePath);
+
+                    //messages.Add("http://wwww." + savePath.Split(".")[1]);
                 }
+
+                //var msg = "";
+
+                //foreach (var message in messages)
+                //{
+                //    msg += message + "\n";
+                //}
+
+                //mailer.SendMessage(msg);
             }
             else
             {
@@ -53,6 +65,17 @@ namespace TimeTableManager
             }
             timer.Change(0, 1000);
         }
+
+        private static string ClearName(string fileName)
+        {
+            fileName = fileName.Replace("<title>", "");
+            fileName = fileName.Replace("</title>", "");
+            fileName = fileName.Replace("(9 кл)", "");
+            fileName = fileName.Replace("(11 кл)", "");
+            fileName = fileName.Replace(" ", "");
+
+            return fileName;
+        } 
 
         private static void Callback(object state)
         {

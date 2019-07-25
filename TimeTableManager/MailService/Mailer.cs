@@ -13,6 +13,10 @@ namespace TimeTableManager.MailService
         private const int LastMessageCount = 10;
         private readonly Pop3Client _client = new Pop3Client();
 
+        private string _sender;
+        private string _lastMessageDate;
+
+
         private List<Message> _messages;
 
         private int GetMessagesCount()
@@ -80,7 +84,7 @@ namespace TimeTableManager.MailService
 
         public string GetAttachment()
         {
-            var subject = "Расписание на " + DateTime.Now.ToString("dd.MM.yyyy");
+            var subject = "Расписание на ";
 
             var filterMessages = FilterMessages(subject);
 
@@ -88,6 +92,13 @@ namespace TimeTableManager.MailService
             if (filterMessages.Count > 0)
             {
                 Message msg = filterMessages[0];
+                var date = msg.Headers.Date;
+
+                if (date == _lastMessageDate)
+                    return "";
+                else
+                    _lastMessageDate = date;
+                //_sender = msg.ToMailMessage().From.ToString().Split("<")[1].Replace(">", "");
                 var att = msg.FindAllAttachments();
                 foreach (var ado in att)
                 {
@@ -125,23 +136,25 @@ namespace TimeTableManager.MailService
             return messages;
         }
 
-        public void SendMessage(string message)
-        {
-            SmtpClient c = new SmtpClient(Config.SmtpHostName, 25);
-            MailAddress add = new MailAddress("red5757687@bk.ru");
-            MailMessage msg = new MailMessage();
-            msg.To.Add(add);
-            msg.From = new MailAddress(Config.Email);
-            msg.IsBodyHtml = false;
-            msg.Subject = "Ответ парсера";
-            msg.Body = message;
-            c.Credentials = new System.Net.NetworkCredential(Config.Email, Config.Password);
-            c.EnableSsl = Config.IsSSL;
-            c.Send(msg);
+        //public void SendMessage(string message)
+        //{
+        //    SmtpClient c = new SmtpClient(Config.SmtpHostName, Config.SmtpPort);
+        //    MailAddress add = new MailAddress(_sender);
+        //    MailMessage msg = new MailMessage();
+        //    msg.To.Add(add);
+        //    msg.From = new MailAddress(Config.Email);
+        //    msg.IsBodyHtml = false;
+        //    msg.Subject = "Расписание обновленно";
+        //    msg.Body = message;
+        //    c.Credentials = new System.Net.NetworkCredential(Config.Email, Config.Password);
+        //    c.EnableSsl = Config.IsSSL;
+        //    c.DeliveryMethod = SmtpDeliveryMethod.Network;
+        //    c.UseDefaultCredentials = false;
+        //    c.Send(msg);
 
-            msg.IsBodyHtml = true;
-            c.Send(msg);
-            Console.WriteLine("Message send\n");
-        }
+        //    msg.IsBodyHtml = true;
+        //    c.Send(msg);
+        //    Console.WriteLine("Message send\n");
+        //}
     }
 }

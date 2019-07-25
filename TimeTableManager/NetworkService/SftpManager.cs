@@ -9,7 +9,7 @@ namespace TimeTableManager.NetworkService
 {
     static class SftpManager
     {
-        public static void FileUploadSFTP(string fileName, string filePath)
+        public static string FileUploadSFTP(string fileName, string filePath)
         {
             var host = "kp11.ru";
             var port = 24;
@@ -28,14 +28,16 @@ namespace TimeTableManager.NetworkService
 
                     using (var fileStream = new FileStream(uploadFile, FileMode.Open))
                     {
-
+                        var savePath = $@"/var/www/html/ek.kp11.ru/rasp/{fileName}";
                         client.BufferSize = 4 * 1024; // bypass Payload error large files
-                        client.UploadFile(fileStream, $@"/var/www/html/ek.kp11.ru/rasp/{fileName}");
+                        client.UploadFile(fileStream, savePath);
+                        return savePath;
                     }
                 }
                 else
                 {
                     Debug.WriteLine("I couldn't connect");
+                    return null;
                 }
             }
         }
